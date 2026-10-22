@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon?
+
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+xcuserdata/
+*.dSYM/
+*.ipa
+*.xcarchive
+
+# Clang / compiler output
+*.o
+*.d
+*.h.gch
+
+# Logs and temporary files
+*.log
+*.tmp
+*~
+AGENTS.md

@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A5ECBE5942B94163F40444A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0689651D8D995C3D5BF282C /* QuartzCore.framework */; };
+		0F107E9402E169507ADA1B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D56B0D9D770484AC562 /* Assets.xcassets */; };
+		24493492F040A377599C373E /* ChickenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3069A226E68EF6FD823DB7 /* ChickenView.m */; };
+		598E33357E037E99F7B4F1F2 /* OtamatoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C45C402E2361536D1CBE21 /* OtamatoneView.m */; };
+		5C38AC7294EA418BD261A879 /* ToyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 67080FEC8F27652B115BCDA2 /* ToyTheme.m */; };
+		658266A003FBEB2D7ED61231 /* ToyPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B8369CC1F987BF30ED0810 /* ToyPanelView.m */; };
+		667380F42B9F8959542B32BC /* ToyRecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77456A70B183BFADDEF6E15F /* ToyRecordButton.m */; };
+		6951C8C32A68AB0560D406D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A95267A12A7FC960525164 /* AVFoundation.framework */; };
+		6DEED02612E3CA462BAC210C /* OtamatoneSynth.m in Sources */ = {isa = PBXBuildFile; fileRef = 0342D63E13B1D112FA32A015 /* OtamatoneSynth.m */; };
+		76A5A40183327682B9956747 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E80929ACDE7EC126E5E1A1 /* main.m */; };
+		781B61000606C592E1C615A3 /* ToyMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = F404B7F1B66D0BCA911B1670 /* ToyMusic.m */; };
+		7C377AC163A555320DA9C54B /* ToyRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4181F8D4CF8B64EB8340E97F /* ToyRecorder.m */; };
+		84B003A21C34DA3B57C41480 /* StageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8D384E20CEDAFB4D967A17 /* StageView.m */; };
+		D03A0B67C2FF03DBEB86CC8A /* ChickenSynth.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BE9303D4FCF126A4A04258 /* ChickenSynth.m */; };
+		DA8DED51B4DE951CC34F4972 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9487E3CA5AE9179B41003BE3 /* AppDelegate.m */; };
+		E5FCECC0502B3A6608DDF6D7 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53100709042D3551047ED0FE /* MainWindowController.m */; };
+		F647EDAB59424C202A39FD76 /* ToyAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0EBFF83DE2A3106EF55332 /* ToyAudioEngine.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0342D63E13B1D112FA32A015 /* OtamatoneSynth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtamatoneSynth.m; sourceTree = "<group>"; };
+		056B834A1B5D81941C967F72 /* ChickenSynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChickenSynth.h; sourceTree = "<group>"; };
+		0716AD617956873264EF39FC /* ChickenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChickenView.h; sourceTree = "<group>"; };
+		086F20C19AD5AE1A8C0FF2B5 /* ToyRecordButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToyRecordButton.h; sourceTree = "<group>"; };
+		17FFC845FCB4F638EBD26F75 /* Toybox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toybox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B3069A226E68EF6FD823DB7 /* ChickenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChickenView.m; sourceTree = "<group>"; };
+		1E0EBFF83DE2A3106EF55332 /* ToyAudioEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToyAudioEngine.m; sourceTree = "<group>"; };
+		21A95267A12A7FC960525164 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		28C45C402E2361536D1CBE21 /* OtamatoneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtamatoneView.m; sourceTree = "<group>"; };
+		337AF53EBCD087CE6F6B1B7E /* ToyMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToyMusic.h; sourceTree = "<group>"; };
+		417BD2E671CB85076E726953 /* ToyRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToyRecorder.h; sourceTree = "<group>"; };
+		4181F8D4CF8B64EB8340E97F /* ToyRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToyRecorder.m; sourceTree = "<group>"; };
+		53100709042D3551047ED0FE /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		57BE9303D4FCF126A4A04258 /* ChickenSynth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChickenSynth.m; sourceTree = "<group>"; };
+		59B02D56B0D9D770484AC562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67080FEC8F27652B115BCDA2 /* ToyTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToyTheme.m; sourceTree = "<group>"; };
+		7738C12F43786C2028599B8A /* SynthDSP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynthDSP.h; sourceTree = "<group>"; };
+		77456A70B183BFADDEF6E15F /* ToyRecordButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToyRecordButton.m; sourceTree = "<group>"; };
+		7A9D87BC319476931FC370C3 /* ToyAudioEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToyAudioEngine.h; sourceTree = "<group>"; };
+		93C98168D9C52954428AA81D /* ToyPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToyPanelView.h; sourceTree = "<group>"; };
+		9487E3CA5AE9179B41003BE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A2B931A69913E1179E7FCDEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D5B8369CC1F987BF30ED0810 /* ToyPanelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToyPanelView.m; sourceTree = "<group>"; };
+		D9AFF0DCF6931200293DB12E /* OtamatoneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtamatoneView.h; sourceTree = "<group>"; };
+		DF3655F416479A46F2214B45 /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		E1E80929ACDE7EC126E5E1A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4BAB8497861DE186D45BCA1 /* ToyTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToyTheme.h; sourceTree = "<group>"; };
+		EC4415CC13AA835F50EDBBA6 /* StageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StageView.h; sourceTree = "<group>"; };
+		F0689651D8D995C3D5BF282C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F1436A1F8CDDE5B3E32FC242 /* OtamatoneSynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtamatoneSynth.h; sourceTree = "<group>"; };
+		F404B7F1B66D0BCA911B1670 /* ToyMusic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToyMusic.m; sourceTree = "<group>"; };
+		FB8D384E20CEDAFB4D967A17 /* StageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StageView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F77EC9A689FFC92A722333E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6951C8C32A68AB0560D406D8 /* AVFoundation.framework in Frameworks */,
+				0A5ECBE5942B94163F40444A /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1127AA0C8272757BD3328008 /* Toybox */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2372443516675B3536BD0 /* App */,
+				DDF6F8CABCBFB75737BE2E21 /* Audio */,
+				7B5300A4C6419CB5CE089BF4 /* Resources */,
+				48D7E098A723AB9C9C41DE01 /* UI */,
+			);
+			path = Toybox;
+			sourceTree = "<group>";
+		};
+		48D7E098A723AB9C9C41DE01 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0716AD617956873264EF39FC /* ChickenView.h */,
+				1B3069A226E68EF6FD823DB7 /* ChickenView.m */,
+				D9AFF0DCF6931200293DB12E /* OtamatoneView.h */,
+				28C45C402E2361536D1CBE21 /* OtamatoneView.m */,
+				EC4415CC13AA835F50EDBBA6 /* StageView.h */,
+				FB8D384E20CEDAFB4D967A17 /* StageView.m */,
+				337AF53EBCD087CE6F6B1B7E /* ToyMusic.h */,
+				F404B7F1B66D0BCA911B1670 /* ToyMusic.m */,
+				93C98168D9C52954428AA81D /* ToyPanelView.h */,
+				D5B8369CC1F987BF30ED0810 /* ToyPanelView.m */,
+				086F20C19AD5AE1A8C0FF2B5 /* ToyRecordButton.h */,
+				77456A70B183BFADDEF6E15F /* ToyRecordButton.m */,
+				E4BAB8497861DE186D45BCA1 /* ToyTheme.h */,
+				67080FEC8F27652B115BCDA2 /* ToyTheme.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7B5300A4C6419CB5CE089BF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59B02D56B0D9D770484AC562 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		908CC9D9260A3FD406A4683B = {
+			isa = PBXGroup;
+			children = (
+				1127AA0C8272757BD3328008 /* Toybox */,
+				F496A25F03C38AE6683A9C63 /* Frameworks */,
+				E82BD68614BDB0FDBDC04F41 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDF6F8CABCBFB75737BE2E21 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				056B834A1B5D81941C967F72 /* ChickenSynth.h */,
+				57BE9303D4FCF126A4A04258 /* ChickenSynth.m */,
+				F1436A1F8CDDE5B3E32FC242 /* OtamatoneSynth.h */,
+				0342D63E13B1D112FA32A015 /* OtamatoneSynth.m */,
+				7738C12F43786C2028599B8A /* SynthDSP.h */,
+				7A9D87BC319476931FC370C3 /* ToyAudioEngine.h */,
+				1E0EBFF83DE2A3106EF55332 /* ToyAudioEngine.m */,
+				417BD2E671CB85076E726953 /* ToyRecorder.h */,
+				4181F8D4CF8B64EB8340E97F /* ToyRecorder.m */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		DEB2372443516675B3536BD0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A2B931A69913E1179E7FCDEF /* AppDelegate.h */,
+				9487E3CA5AE9179B41003BE3 /* AppDelegate.m */,
+				E1E80929ACDE7EC126E5E1A1 /* main.m */,
+				DF3655F416479A46F2214B45 /* MainWindowController.h */,
+				53100709042D3551047ED0FE /* MainWindowController.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E82BD68614BDB0FDBDC04F41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17FFC845FCB4F638EBD26F75 /* Toybox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F496A25F03C38AE6683A9C63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21A95267A12A7FC960525164 /* AVFoundation.framework */,
+				F0689651D8D995C3D5BF282C /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20638D1905CD88856582D13F /* Toybox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55FBD0DC645861EA4AB151C5 /* Build configuration list for PBXNativeTarget "Toybox" */;
+			buildPhases = (
+				79A0F628F59746F1B263A306 /* Sources */,
+				064ED2E17D473C8C0ED82075 /* Resources */,
+				F77EC9A689FFC92A722333E2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toybox;
+			packageProductDependencies = (
+			);
+			productName = Toybox;
+			productReference = 17FFC845FCB4F638EBD26F75 /* Toybox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0F7CCADD6A1AE2D1D006ADDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					20638D1905CD88856582D13F = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 4834E038F1C2EF5057492B0A /* Build configuration list for PBXProject "Toybox" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 908CC9D9260A3FD406A4683B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E82BD68614BDB0FDBDC04F41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20638D1905CD88856582D13F /* Toybox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		064ED2E17D473C8C0ED82075 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F107E9402E169507ADA1B2B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79A0F628F59746F1B263A306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8DED51B4DE951CC34F4972 /* AppDelegate.m in Sources */,
+				D03A0B67C2FF03DBEB86CC8A /* ChickenSynth.m in Sources */,
+				24493492F040A377599C373E /* ChickenView.m in Sources */,
+				E5FCECC0502B3A6608DDF6D7 /* MainWindowController.m in Sources */,
+				6DEED02612E3CA462BAC210C /* OtamatoneSynth.m in Sources */,
+				598E33357E037E99F7B4F1F2 /* OtamatoneView.m in Sources */,
+				84B003A21C34DA3B57C41480 /* StageView.m in Sources */,
+				F647EDAB59424C202A39FD76 /* ToyAudioEngine.m in Sources */,
+				781B61000606C592E1C615A3 /* ToyMusic.m in Sources */,
+				658266A003FBEB2D7ED61231 /* ToyPanelView.m in Sources */,
+				667380F42B9F8959542B32BC /* ToyRecordButton.m in Sources */,
+				7C377AC163A555320DA9C54B /* ToyRecorder.m in Sources */,
+				5C38AC7294EA418BD261A879 /* ToyTheme.m in Sources */,
+				76A5A40183327682B9956747 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6B899BB463F7AE15D6ADF885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Toybox/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sid.toybox;
+				PRODUCT_NAME = Toybox;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		751C28325F2F06AAFC18598C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		BDB2FF1520F61B4C55441A53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Toybox/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sid.toybox;
+				PRODUCT_NAME = Toybox;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D7A84015F1A2A669442620FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4834E038F1C2EF5057492B0A /* Build configuration list for PBXProject "Toybox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7A84015F1A2A669442620FE /* Debug */,
+				751C28325F2F06AAFC18598C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		55FBD0DC645861EA4AB151C5 /* Build configuration list for PBXNativeTarget "Toybox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDB2FF1520F61B4C55441A53 /* Debug */,
+				6B899BB463F7AE15D6ADF885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0F7CCADD6A1AE2D1D006ADDA /* Project object */;
+}
