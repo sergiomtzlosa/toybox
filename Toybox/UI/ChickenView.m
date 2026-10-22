@@ -942,19 +942,20 @@ static void ChickenDrawStroke(NSBezierPath *path, CGFloat width, NSColor *color)
         880.000, 1046.502, 1174.659, 1318.510, 1567.982
     };
     static const NSInteger noteCount = 5;
-    const CGFloat left = 96.0;
-    const CGFloat right = 364.0;
-    const CGFloat railY = 31.0;
+    const CGFloat left = 78.0;
+    const CGFloat right = 382.0;
+    const CGFloat railY = 34.0;
     const CGFloat spacing = (right - left) / (CGFloat)(noteCount - 1);
 
-    ToyDrawText(@"SQUAWK SCALE", NSMakePoint(left, 41.0),
-                ToyMonoFont(7.4, NSFontWeightSemibold), ToyColor(0xF2C34E, 0.48), 1.25);
+    ToyDrawText(@"SQUAWK SCALE", NSMakePoint(74.0, 43.0),
+                ToyMonoFont(10.8, NSFontWeightSemibold), ToyColor(0xF2C34E, 0.58), 0.85);
 
     NSBezierPath *rail = [NSBezierPath bezierPath];
     [rail moveToPoint:NSMakePoint(left, railY)];
     [rail lineToPoint:NSMakePoint(right, railY)];
-    rail.lineWidth = 1.0;
-    [ToyColor(0xF2C34E, 0.19) setStroke];
+    rail.lineWidth = 1.5;
+    rail.lineCapStyle = NSLineCapStyleRound;
+    [ToyColor(0xF2C34E, 0.23) setStroke];
     [rail stroke];
 
     BOOL showNote = (_pressing || _squeezeValue > 0.04) && _squawkFrequency > 0.0;
@@ -973,19 +974,19 @@ static void ChickenDrawStroke(NSBezierPath *path, CGFloat width, NSColor *color)
     for (NSInteger index = 0; index < noteCount; index++) {
         BOOL active = index == activeIndex;
         CGFloat x = left + spacing * (CGFloat)index;
-        NSColor *tickColor = active ? ToyColor(0xFFDE8A, 0.98) : ToyColor(0xF2C34E, 0.32);
+        NSColor *tickColor = active ? ToyColor(0xFFDE8A, 0.98) : ToyColor(0xF2C34E, 0.44);
         NSBezierPath *tick = [NSBezierPath bezierPath];
-        [tick moveToPoint:NSMakePoint(x, railY - (active ? 7.0 : 4.0))];
-        [tick lineToPoint:NSMakePoint(x, railY + (active ? 6.0 : 4.0))];
-        tick.lineWidth = active ? 1.7 : 1.1;
+        [tick moveToPoint:NSMakePoint(x, railY - (active ? 8.0 : 5.5))];
+        [tick lineToPoint:NSMakePoint(x, railY + (active ? 6.5 : 5.5))];
+        tick.lineWidth = active ? 2.2 : 1.4;
         [tickColor setStroke];
         [tick stroke];
 
         if (active) {
             NSBezierPath *dot = [NSBezierPath bezierPathWithOvalInRect:
-                NSMakeRect(x - 2.6, railY - 2.6, 5.2, 5.2)];
+                NSMakeRect(x - 4.0, railY - 4.0, 8.0, 8.0)];
             NSShadow *glow = [[NSShadow alloc] init];
-            glow.shadowBlurRadius = 9.0;
+            glow.shadowBlurRadius = 11.0;
             glow.shadowColor = ToyColor(0xF2C34E, 0.95);
             glow.shadowOffset = NSMakeSize(0.0, 0.0);
             [NSGraphicsContext saveGraphicsState];
@@ -996,11 +997,11 @@ static void ChickenDrawStroke(NSBezierPath *path, CGFloat width, NSColor *color)
         }
 
         NSString *name = ToyNoteNameForFrequency(frequencies[index]);
-        NSFont *font = ToyMonoFont(active ? 10.4 : 9.2,
+        NSFont *font = ToyMonoFont(active ? 19.5 : 17.5,
                                    active ? NSFontWeightSemibold : NSFontWeightMedium);
         NSSize nameSize = ToyTextSize(name, font, 0.3);
-        ToyDrawText(name, NSMakePoint(x - nameSize.width * 0.5, 8.0),
-                    font, active ? ToyColor(0xFFE69B, 1.0) : ToyColor(0xF2C34E, 0.42), 0.3);
+        ToyDrawText(name, NSMakePoint(x - nameSize.width * 0.5, 0.5),
+                    font, active ? ToyColor(0xFFE69B, 1.0) : ToyColor(0xF2C34E, 0.54), 0.3);
     }
 
     (void)g;
@@ -1013,17 +1014,17 @@ static void ChickenDrawStroke(NSBezierPath *path, CGFloat width, NSColor *color)
     }
 
     NSString *name = ToyNoteNameForFrequency(_squawkFrequency);
-    NSFont *noteFont = ToyMonoFont(9.4, NSFontWeightSemibold);
+    NSFont *noteFont = ToyMonoFont(11.8, NSFontWeightSemibold);
     NSSize noteSize = ToyTextSize(name, noteFont, 0.3);
-    CGFloat tagWidth = noteSize.width + 34.0;
-    CGFloat tagHeight = 22.0;
+    CGFloat tagWidth = noteSize.width + 40.0;
+    CGFloat tagHeight = 25.0;
     CGFloat tagX = g.headCX + 64.0;
     CGFloat tagY = g.headCY + 16.0;
     if (tagX + tagWidth > 444.0) {
         tagX = 444.0 - tagWidth;
     }
     NSRect tagRect = NSMakeRect(tagX, tagY, tagWidth, tagHeight);
-    NSBezierPath *tag = [NSBezierPath bezierPathWithRoundedRect:tagRect xRadius:11.0 yRadius:11.0];
+    NSBezierPath *tag = [NSBezierPath bezierPathWithRoundedRect:tagRect xRadius:12.5 yRadius:12.5];
 
     NSBezierPath *leader = [NSBezierPath bezierPath];
     [leader moveToPoint:NSMakePoint(g.headCX + g.headRX - 2.0, tagY + tagHeight * 0.5)];
@@ -1038,10 +1039,10 @@ static void ChickenDrawStroke(NSBezierPath *path, CGFloat width, NSColor *color)
     [ToyColor(0xF2C34E, 0.42) setStroke];
     [tag stroke];
 
-    NSFont *symbolFont = [NSFont systemFontOfSize:11.5 weight:NSFontWeightMedium];
-    ToyDrawText(@"♪", NSMakePoint(tagX + 9.0, tagY + 4.4),
+    NSFont *symbolFont = [NSFont systemFontOfSize:13.5 weight:NSFontWeightMedium];
+    ToyDrawText(@"♪", NSMakePoint(tagX + 9.0, tagY + 5.2),
                 symbolFont, ToyColor(0xFFD873, 0.95), 0.0);
-    ToyDrawText(name, NSMakePoint(tagX + 22.0, tagY + (tagHeight - noteSize.height) * 0.5),
+    ToyDrawText(name, NSMakePoint(tagX + 25.0, tagY + (tagHeight - noteSize.height) * 0.5),
                 noteFont, ToyColor(0xFFF1C7, 0.96), 0.3);
 }
 

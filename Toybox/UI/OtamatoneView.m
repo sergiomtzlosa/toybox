@@ -616,18 +616,26 @@ static void OtoSpringStep(CGFloat *value, CGFloat *velocity, CGFloat target,
     };
     static const NSInteger scaleCount = (NSInteger)(sizeof(scaleNotes) / sizeof(scaleNotes[0]));
 
-    const CGFloat spineX = 308.0;
-    const CGFloat labelX = 317.0;
-    NSFont *captionFont = ToyMonoFont(6.8, NSFontWeightMedium);
-    NSColor *captionColor = ToyColor(0x8FE6D7, 0.38);
-    ToyDrawText(@"A MINOR  ·  A3–A5", NSMakePoint(spineX, kOtoPitchHighY + 11.0),
-                captionFont, captionColor, 1.0);
+    const CGFloat spineX = 322.0;
+    const CGFloat labelX = 336.0;
+    const CGFloat staggerX = 374.0;
+    NSFont *captionFont = ToyMonoFont(10.6, NSFontWeightSemibold);
+    NSColor *captionColor = ToyColor(0x9FF1E2, 0.58);
+    NSString *captionText = @"A MINOR";
+    CGFloat captionY = kOtoPitchHighY + 14.0;
+    ToyDrawText(captionText, NSMakePoint(spineX - 8.0, captionY),
+                captionFont, captionColor, 1.1);
+    NSSize captionSize = ToyTextSize(captionText, captionFont, 1.1);
+    ToyDrawText(@"A3–A5",
+                NSMakePoint(spineX - 8.0 + captionSize.width + 9.0, captionY + 0.5),
+                ToyMonoFont(8.8, NSFontWeightMedium), ToyColor(0x8FE6D7, 0.36), 0.6);
 
     NSBezierPath *spine = [NSBezierPath bezierPath];
-    [spine moveToPoint:NSMakePoint(spineX, kOtoPitchLowY - 2.0)];
-    [spine lineToPoint:NSMakePoint(spineX, kOtoPitchHighY + 2.0)];
-    spine.lineWidth = 1.0;
-    [ToyColor(0x8FE6D7, 0.13) setStroke];
+    [spine moveToPoint:NSMakePoint(spineX, kOtoPitchLowY - 6.0)];
+    [spine lineToPoint:NSMakePoint(spineX, kOtoPitchHighY + 6.0)];
+    spine.lineWidth = 1.3;
+    spine.lineCapStyle = NSLineCapStyleRound;
+    [ToyColor(0x8FE6D7, 0.19) setStroke];
     [spine stroke];
 
     NSInteger activeIndex = -1;
@@ -641,24 +649,38 @@ static void OtoSpringStep(CGFloat *value, CGFloat *velocity, CGFloat target,
         }
     }
 
+    CGFloat previousY = -1000.0;
     for (NSInteger index = 0; index < scaleCount; index++) {
         BOOL active = index == activeIndex;
         double noteFrequency = ToyFrequencyForMIDINote(scaleNotes[index]);
         CGFloat y = [self scaleYForFrequency:noteFrequency];
-        NSColor *tickColor = active ? ToyColor(0xD9FFF8, 0.92) : ToyColor(0x8FE6D7, 0.28);
+        BOOL staggered = index > 0 && (y - previousY) < 14.0;
+        previousY = y;
+        CGFloat labelPositionX = staggered ? staggerX : labelX;
+
+        NSColor *tickColor = active ? ToyColor(0xD9FFF8, 0.95) : ToyColor(0x8FE6D7, 0.40);
         NSBezierPath *tick = [NSBezierPath bezierPath];
-        [tick moveToPoint:NSMakePoint(spineX - (active ? 6.0 : 4.0), y)];
-        [tick lineToPoint:NSMakePoint(spineX + (active ? 3.0 : 1.5), y)];
-        tick.lineWidth = active ? 1.5 : 1.0;
+        [tick moveToPoint:NSMakePoint(spineX - (active ? 10.0 : 7.0), y)];
+        [tick lineToPoint:NSMakePoint(spineX + (active ? 7.0 : 4.0), y)];
+        tick.lineWidth = active ? 2.3 : 1.4;
         [tickColor setStroke];
         [tick stroke];
 
+        if (staggered) {
+            NSBezierPath *staggerLeader = [NSBezierPath bezierPath];
+            [staggerLeader moveToPoint:NSMakePoint(spineX + 4.0, y)];
+            [staggerLeader lineToPoint:NSMakePoint(staggerX - 5.0, y)];
+            staggerLeader.lineWidth = 1.0;
+            [ToyColor(0x8FE6D7, active ? 0.38 : 0.16) setStroke];
+            [staggerLeader stroke];
+        }
+
         if (active) {
             NSBezierPath *dot = [NSBezierPath bezierPathWithOvalInRect:
-                NSMakeRect(spineX - 2.1, y - 2.1, 4.2, 4.2)];
+                NSMakeRect(spineX - 4.25, y - 4.25, 8.5, 8.5)];
             NSShadow *glow = [[NSShadow alloc] init];
-            glow.shadowBlurRadius = 7.0;
-            glow.shadowColor = ToyColor(0x8DF1DC, 0.85);
+            glow.shadowBlurRadius = 11.0;
+            glow.shadowColor = ToyColor(0x8DF1DC, 0.92);
             glow.shadowOffset = NSMakeSize(0.0, 0.0);
             [NSGraphicsContext saveGraphicsState];
             [glow set];
@@ -668,12 +690,27 @@ static void OtoSpringStep(CGFloat *value, CGFloat *velocity, CGFloat target,
         }
 
         NSString *name = ToyNoteNameForMIDINote(scaleNotes[index]);
-        NSFont *font = ToyMonoFont(active ? 8.2 : 6.7,
+        NSFont *font = ToyMonoFont(active ? 17.8 : 16.5,
                                    active ? NSFontWeightSemibold : NSFontWeightMedium);
-        NSSize nameSize = ToyTextSize(name, font, 0.45);
-        NSColor *nameColor = active ? ToyColor(0xE5FFF9, 0.98) : ToyColor(0x8FE6D7, 0.30);
-        ToyDrawText(name, NSMakePoint(labelX, y - nameSize.height * 0.5),
-                    font, nameColor, 0.45);
+        NSSize nameSize = ToyTextSize(name, font, 0.25);
+
+        if (active) {
+            const CGFloat pillPadX = 7.0;
+            NSRect pillRect = NSMakeRect(labelPositionX - pillPadX, y - 10.5,
+                                         nameSize.width + pillPadX * 2.0, 21.0);
+            NSBezierPath *pill = [NSBezierPath bezierPathWithRoundedRect:pillRect
+                                                                xRadius:10.5
+                                                                yRadius:10.5];
+            [ToyColor(0x0A1014, 0.84) setFill];
+            [pill fill];
+            pill.lineWidth = 1.2;
+            [ToyColor(0x8FE6D7, 0.38) setStroke];
+            [pill stroke];
+        }
+
+        NSColor *nameColor = active ? ToyColor(0xE5FFF9, 0.98) : ToyColor(0x8FE6D7, 0.54);
+        ToyDrawText(name, NSMakePoint(labelPositionX, y - nameSize.height * 0.5),
+                    font, nameColor, 0.25);
     }
 
     double normalized = log(_pitchFrequency / kOtoMinimumFrequency) /
@@ -690,20 +727,21 @@ static void OtoSpringStep(CGFloat *value, CGFloat *velocity, CGFloat target,
     [leader stroke];
 
     NSString *noteName = ToyNoteNameForFrequency(_pitchFrequency);
-    NSFont *noteFont = ToyMonoFont(8.3, NSFontWeightSemibold);
+    NSFont *noteFont = ToyMonoFont(12.2, NSFontWeightSemibold);
     NSSize noteSize = ToyTextSize(noteName, noteFont, 0.35);
-    CGFloat badgeWidth = MAX(33.0, noteSize.width + 13.0);
-    NSRect badgeRect = NSMakeRect(247.0, puckY - 9.0, badgeWidth, 18.0);
+    CGFloat badgeWidth = MAX(44.0, noteSize.width + 16.0);
+    NSRect badgeRect = NSMakeRect(247.0, puckY - 11.5, badgeWidth, 23.0);
     NSBezierPath *badge = [NSBezierPath bezierPathWithRoundedRect:badgeRect
-                                                        xRadius:9.0
-                                                        yRadius:9.0];
+                                                        xRadius:11.5
+                                                        yRadius:11.5];
     [ToyColor(0x0A1014, 0.78 * visibility) setFill];
     [badge fill];
     badge.lineWidth = 1.0;
     [ToyColor(0x8FE6D7, 0.34 * visibility) setStroke];
     [badge stroke];
     ToyDrawText(noteName,
-                NSMakePoint(NSMinX(badgeRect) + 6.5, puckY - noteSize.height * 0.5),
+                NSMakePoint(NSMinX(badgeRect) + (badgeWidth - noteSize.width) * 0.5,
+                            puckY - noteSize.height * 0.5),
                 noteFont, ToyColor(0xDFFFF7, 0.92 * visibility), 0.35);
 }
 
